@@ -107,7 +107,7 @@ fun! s:illuminate(...) abort
 endf
 
 fun! s:match_word(word) abort
-  if (a:word =~# '^\\<\\>')
+  if (stridx(a:word, '\<\>') == 0)
     return
   endif
   if g:Illuminate_highlightUnderCursor
